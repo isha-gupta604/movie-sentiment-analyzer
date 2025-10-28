@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Sentiment Analyzer</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #222;
+    }
+    .whole {
+      background: url("https://wallpaperaccess.com/full/4840785.jpg");
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    #move {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 400;
+      position: relative;
+      white-space: nowrap;
+      animation: moveText 15s linear infinite;
+    }
+    @keyframes moveText {
+      0% { left: 100%; }
+      100% { left: -100%; }
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 10px;
+      overflow: hidden;
+    }
+    button {
+      border-radius: 10px;
+      background-color: rgb(35, 209, 240);
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: rgb(21, 21, 112);
+      color: white;
+    }
+    a:hover {
+      color: red;
+    }
+    .section {
+      background-color: white;
+      opacity: 0.95;
+      border-radius: 8px;
+      margin: 10px;
+      padding: 15px;
+    }
+    .about-file {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .about-file > div {
+      flex: 1;
+      min-width: 300px;
+      border: 1px solid #760857;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .visuals {
+      text-align: center;
+    }
+    .visuals img {
+      width: 80%;
+      max-width: 800px;
+      border-radius: 10px;
+      margin-top: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    footer {
+      background-color: black;
+      color: white;
+      padding: 15px;
+      text-align: left;
+    }
+    footer h2 {
+      margin-top: 0;
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+      #move {
+        font-size: 1.2rem;
+        animation-duration: 20s;
+      }
+      .visuals img {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="whole">
+    <header>
+      <h3 id="move">🎥 Transforming Movie Data into Insights — Powered by Deep Learning</h3>
+    </header>
+    <section class="section about-file">
+      <div>
+        <h2>About File</h2>
+        <h4>Source: Kaggle</h4>
+        <h4>
+          Columns: url, year released, title, imdb id, cast, plot summary, review, genre,
+          released date, plot keywords, duration, age content
+        </h4>
+        <h4>Technology: Python and frameworks — Pandas, NumPy, TensorFlow, VADER, Matplotlib, Regex</h4>
+        <center>
+          <button onclick="window.location.href='C:/Users/shri ganesh ji/OneDrive/Desktop/sem5/.vscode/movie review/Book1.xlsx'">Download File</button>
+        </center>
+      </div>
+      <div style="border: 1px solid purple; width: 50%; padding: 10px; display: flex; flex: column nowrap; justify-content: space-between;">
+        <div style="border: 2px solid; padding: 0px 20px;">
+          <h2>Summary Stats:</h2>
+          <h4>Total Reviews Analyzed: 2992</h4>
+          <h4>Distinct Genres: 26</h4>
+          <h4>Average Duration (min): 114.88</h4>
+          <h4>Most Common Age Rating: 7.0</h4>
+          <h4>Top Positive Genre: Musical</h4>
+        </div>
+        <div style="border: 2px solid; padding: 0px 20px;">
+          <h3>Sentiment Distribution:</h3>
+          <h4>Mean vader Score: 0.398</h4>
+          <h4>Positive Reviews: 54.98%</h4>
+          <h4>Negative Reviews: 11.23%</h4>
+          <h4>Neutral Reviews: 33.79%</h4>
+          <h4>Logistic Regression Accuracy: 0.863</h4>
+        </div>
+      </div>
+    </section>
+    <section class="section visuals">
+      <h2>Visualizations</h2>
+      <div>
+        <h3>VADER Score Interpretation:</h3>
+        <p>Closer to +1 = Positive Review</p>
+        <p>Around 0 = Neutral Review</p>
+        <p>Closer to -1 = Negative Review</p>
+      </div>
+      <img src="genre_sentiment (2).png" alt="Mean VADER Score.png" style="max-width: 90%; height: auto; border-radius: 8px;"/>
+    </section>
+    <footer style="color:white; text-align:center; padding:10px;">
+      <p>Developed by <b>Isha Gupta</b> | <a href="https://github.com/isha-gupta604" style="color:lightblue;">View on GitHub</a></p>
+    </footer>
+  </div>
+</body>
+</html>

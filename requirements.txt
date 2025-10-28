@@ -1,0 +1,7 @@
+pandas
+numpy
+regex
+scipy
+scikit-learn
+nltk
+matplotlib
